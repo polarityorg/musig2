@@ -111,13 +111,12 @@ impl KeyAggContext {
 
         let pk_list_hash = hash_pubkeys(&ordered_pubkeys);
 
+        //TODO figure out how to use the pk2 and pk list hash to gaurentee saftey
         let (effective_pubkeys, key_coefficients): (Vec<MaybePoint>, Vec<MaybeScalar>) =
             ordered_pubkeys
                 .iter()
                 .map(|&pubkey| {
-                    let key_coeff =
-                        compute_key_aggregation_coefficient(&pk_list_hash, &pubkey, pk2);
-                    (pubkey * key_coeff, key_coeff)
+                    (MaybePoint::Valid(pubkey), MaybeScalar::one())
                 })
                 .unzip();
 

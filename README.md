@@ -1,4 +1,5 @@
-# MuSig2
+# MuSig2 - Forked from [MuSig2](https://github.com/conduition/musig2)
+# DISCLAIMER: This is a fork of the original MuSig2 crate, not created by the original authors. Please refer to the original crate for use.
 
 This crate provides a flexible rust implementation of [MuSig2](https://eprint.iacr.org/2020/1261), an optimized digital signature aggregation protocol, on the `secp256k1` elliptic curve.
 
